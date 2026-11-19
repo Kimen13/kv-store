@@ -1,0 +1,137 @@
+[
+  {
+    "case": "01_replica_crash",
+    "status": "PASS",
+    "elapsed_ms": 4406.0,
+    "details": {
+      "value": "on",
+      "committed": 2,
+      "recovered_B": 2
+    }
+  },
+  {
+    "case": "02_partition_duplicates",
+    "status": "PASS",
+    "elapsed_ms": 2828.0,
+    "details": {
+      "client_replays": 3,
+      "peer_replays": 3,
+      "revision": 2,
+      "healed_C": 2,
+      "isolated_A": "rejected"
+    }
+  },
+  {
+    "case": "03_delayed_message",
+    "status": "PASS",
+    "elapsed_ms": 13453.0,
+    "details": {
+      "delay_seconds": 10.0,
+      "received_revisions": [
+        2,
+        1
+      ],
+      "value": "new"
+    }
+  },
+  {
+    "case": "04_memory_loss",
+    "status": "PASS",
+    "elapsed_ms": 3422.0,
+    "details": {
+      "old_pid": 8444,
+      "new_pid": 3184,
+      "recovered": 1,
+      "next_revision": 2
+    }
+  },
+  {
+    "case": "05_learner_crash",
+    "status": "PASS",
+    "elapsed_ms": 4578.0,
+    "details": {
+      "copied_before_crash": 3,
+      "baseline": 6,
+      "resumed": 3,
+      "final": 7,
+      "learner_counts_for_quorum": false
+    }
+  },
+  {
+    "case": "06_hotspot",
+    "status": "PASS",
+    "elapsed_ms": 7204.0,
+    "details": {
+      "requests": 1000,
+      "hot_percent": 60,
+      "baseline": {
+        "strong_gets": 1000,
+        "p50_us": 187.6,
+        "p95_us": 575.7
+      },
+      "cached": {
+        "strong_gets": 401,
+        "p50_us": 1.0,
+        "p95_us": 274.5
+      },
+      "new_revision": 12,
+      "watch_detection_ms": 47.0,
+      "sensitivity_50pct": {
+        "requests": 1000,
+        "hot_percent": 50,
+        "baseline": {
+          "strong_gets": 1000,
+          "p50_us": 169.9,
+          "p95_us": 585.6
+        },
+        "cached": {
+          "strong_gets": 501,
+          "p50_us": 162.5,
+          "p95_us": 385.7
+        },
+        "new_revision": 12,
+        "watch_detection_ms": 63.0
+      }
+    }
+  },
+  {
+    "case": "07_concurrent_cas",
+    "status": "PASS",
+    "elapsed_ms": 2625.0,
+    "details": {
+      "expected_revision": 1,
+      "accepted": 1,
+      "rejected": 1,
+      "final_value": "green",
+      "final_key_revision": 2,
+      "commit_index": 3
+    }
+  },
+  {
+    "case": "08_clock_rollback",
+    "status": "PASS",
+    "elapsed_ms": 2578.0,
+    "details": {
+      "wall_shift_s": -60,
+      "ttl_s": 1,
+      "expired_at_s": 1.01,
+      "timeout_closed": true,
+      "revisions": [
+        1,
+        2
+      ]
+    }
+  },
+  {
+    "case": "09_lost_reply",
+    "status": "PASS",
+    "elapsed_ms": 3765.0,
+    "details": {
+      "request_id": "client-42",
+      "attempts": 2,
+      "commits": 1,
+      "events": 1,
+      "revision": 1
+    }
+  }
+]
